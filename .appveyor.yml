@@ -14,4 +14,6 @@ build_script:
   - ls -l build
   - gradlew --no-daemon --info build
   - ps: 1..5 | % {(Measure-Command {build/pi-c 1000}).TotalSeconds} | Measure-Object -Average
+  - ps: 1..5 | % {(Measure-Command {build/konan/bin/mingw/pi-interop 1000}).TotalSeconds} | Measure-Object -Average
   - ps: 1..5 | % {(Measure-Command {build/konan/bin/mingw/pi-konan 1000}).TotalSeconds} | Measure-Object -Average
+
