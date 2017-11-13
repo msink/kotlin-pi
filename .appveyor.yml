@@ -6,7 +6,7 @@ environment:
 
 build_script:
   - mkdir build
-  - set
+  - C:\msys64\usr\bin\pacman -Q
   - clang --version -v
   - clang -O3 -c src/main/c/pi.c -o build/pi.o && ar rc build/pi.a build/*.o
   - clang -O3 src/main/c/main.c build/pi.a -o build/pi-c.exe
