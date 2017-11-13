@@ -1,0 +1,13 @@
+version: 'build #{build}'
+
+environment:
+  JAVA_HOME: C:\Program Files\Java\jdk1.8.0
+  PATH: C:\msys64\mingw64\bin;%PATH%
+
+build_script:
+  - mkdir build
+  - clang -O3 -c src/main/c/pi.c -o build/pi.o && ar rc build/pi.a build/*.o
+  - clang -O3 src/main/c/main.c build/pi.a -o build/pi-c.exe
+  - gradlew --no-daemon --info build
+  - ps: 1..5 | % {(Measure-Command {build/pi-c 1000}).TotalSeconds} | Measure-Object -Average
+  - ps: 1..5 | % {(Measure-Command {build/konan/bin/mingw/pi-konan 1000}).TotalSeconds} | Measure-Object -Average
