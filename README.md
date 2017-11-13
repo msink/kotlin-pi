@@ -10,5 +10,7 @@ Computing 1000 decimal digits of π, average time on 5 runs:
 - plain C : ≈8 sec
 - Kotlin/JVM : same as C, ±10%
 - Kotlin/Native : ≈12 sec
+- Kotlin/Native interop with C : same as C
 
-Result - approx. 1.5 times slower in this test.
+Result - pure Kotlin/Native approx. 1.5 times slower in this test.
+If you want maximum performance - write critical parts in C and call via interop.
