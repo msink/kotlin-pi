@@ -7,8 +7,7 @@ environment:
 build_script:
   - mkdir build
   - pacman -Syu --noconfirm
-  - pacman -Su --noconfirm
-  - pacman -Ss clang
+  - pacman -S mingw-w64-x86_64-clang --noconfirm
   - clang --version -v
   - clang -O3 -c src/main/c/pi.c -o build/pi.o && ar rc build/pi.a build/*.o
   - clang -O3 src/main/c/main.c build/pi.a -o build/pi-c.exe
