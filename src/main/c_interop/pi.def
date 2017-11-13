@@ -1,3 +1,4 @@
+package = pi
 headers = pi.h
 compilerOpts = -Isrc/main/c
 staticLibraries = pi.a 
