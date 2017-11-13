@@ -1,4 +1,4 @@
 headers = pi.h
 compilerOpts = -I../c
 staticLibraries = pi.a 
-libraryPath = ../../../build
+libraryPath = build
