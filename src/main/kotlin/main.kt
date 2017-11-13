@@ -2,17 +2,17 @@ import pi.*
 
 fun main(args: Array<String>) {
     var nmax = 0
-    if (args.size < 2) {
+    if (args.isNotEmpty()) {
         try {
             nmax = args[0].toInt()
         } catch (e: Exception) {
         }
-        if (nmax <= 0) {
-            println("This program computes n decimal digits of \\pi")
-            println("usage: pi n")
-            println("where n is the number of digits you want")
-            return
-        }
+    }
+    if (nmax <= 0) {
+        println("This program computes n decimal digits of \\pi")
+        println("usage: pi n")
+        println("where n is the number of digits you want")
+        return
     }
 
     print("3.")
