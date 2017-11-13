@@ -1,0 +1,15 @@
+apply plugin: 'konan'
+
+konanArtifacts {
+    program('pi-konan')
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:+"
+    }
+}
