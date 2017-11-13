@@ -1,7 +1,9 @@
 apply plugin: 'konan'
 
 konanArtifacts {
-    program('pi-konan')
+    program('pi-konan') {
+        enableOptimizations true
+    }
 }
 
 buildscript {
