@@ -7,10 +7,10 @@ konanArtifacts {
     program('pi-interop') {
         enableOptimizations true
         libraries {
-            artifact 'pi-a'
+            artifact 'pi'
         }
     }
-    interop('pi-a') {
+    interop('pi') {
         defFile 'pi.def'
     }
 }
