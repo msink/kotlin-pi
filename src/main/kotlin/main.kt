@@ -1,3 +1,5 @@
+import pi.*
+
 fun main(args: Array<String>) {
     var nmax = 0
     if (args.size < 2) {
