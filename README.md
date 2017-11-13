@@ -2,7 +2,10 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/github/msink/kotlin-pi?svg=true)](https://ci.appveyor.com/project/msink/kotlin-pi)
 
-Compute 1000 decimal digits, get average on 5 runs:
+The original pi.c was taken from http://bellard.org/pi/pi.c
+(added a plain loop to calculate digits from 1 to n instead of digits around n-th)
+
+Computing 1000 decimal digits of π, average time on 5 runs:
 
 - plain C : ≈8 sec
 - Kotlin/JVM : same as C, ±10%
