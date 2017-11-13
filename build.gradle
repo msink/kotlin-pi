@@ -9,6 +9,7 @@ konanArtifacts {
     }
     program('pi-interop') {
         enableOptimizations true
+        srcFiles 'src/main/kotlin/main.kt'
         libraries {
             artifact 'pi'
         }
