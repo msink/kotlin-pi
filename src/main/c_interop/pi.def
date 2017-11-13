@@ -1,4 +1,4 @@
 headers = pi.h
-compilerOpts = -I../c
+compilerOpts = -Isrc/main/c
 staticLibraries = pi.a 
 libraryPaths = build
