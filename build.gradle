@@ -4,7 +4,9 @@ konanArtifacts {
     program('pi-konan') {
         enableOptimizations true
     }
-    interop('pi')
+    interop('pi') {
+        includeDirs "${System.getProperty("user.dir")}/src/main/c"
+    }
     program('pi-interop') {
         enableOptimizations true
         libraries {
