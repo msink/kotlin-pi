@@ -4,14 +4,12 @@ konanArtifacts {
     program('pi-konan') {
         enableOptimizations true
     }
+    interop('pi')
     program('pi-interop') {
         enableOptimizations true
         libraries {
             artifact 'pi'
         }
-    }
-    interop('pi') {
-        defFile 'pi.def'
     }
 }
 
