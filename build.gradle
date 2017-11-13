@@ -4,6 +4,15 @@ konanArtifacts {
     program('pi-konan') {
         enableOptimizations true
     }
+    program('pi-interop') {
+        enableOptimizations true
+        libraries {
+            artifact 'pi-a'
+        }
+    }
+    interop('pi-a') {
+        defFile 'pi.def'
+    }
 }
 
 buildscript {
