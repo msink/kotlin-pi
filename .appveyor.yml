@@ -14,14 +14,13 @@ build_script:
   - clang -O3 -c src/main/c/pi.c -o build/pi.o && ar rc build/pi.a build/*.o
   - clang -O3 src/main/c/main.c build/pi.a -lm -o build/pi-c.exe
   - gradlew --no-daemon --info build
+  - pushd build && 7z a Pi-windows.zip pi-c.exe .\konan\bin\mingw\pi-interop.exe .\konan\bin\mingw\pi-konan.exe && popd
+  - ls -l build
 
 test_script:
   - ps: 1..5 | % {(Measure-Command {build/pi-c 1000}).TotalSeconds} | Measure-Object -Average
   - ps: 1..5 | % {(Measure-Command {build/konan/bin/mingw/pi-interop 1000}).TotalSeconds} | Measure-Object -Average
   - ps: 1..5 | % {(Measure-Command {build/konan/bin/mingw/pi-konan 1000}).TotalSeconds} | Measure-Object -Average
-
-before_deploy:
-  - pushd build && 7z a Pi-windows.zip pi-c.exe konan/bin/mingw/pi-interop.exe konan/bin/mingw/pi-konan.exe && popd
 
 artifacts:
   - path: build\Pi-windows.zip
