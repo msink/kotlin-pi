@@ -1,6 +1,7 @@
 # Testbench for [Kotlin/Native](https://github.com/JetBrains/kotlin-native)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/github/msink/kotlin-pi?svg=true)](https://ci.appveyor.com/project/msink/kotlin-pi)
+[![Build Status](https://travis-ci.org/msink/kotlin-pi.svg?branch=master)](https://travis-ci.org/msink/kotlin-pi)
 
 The original pi.c was taken from http://bellard.org/pi/pi.c
 (added a plain loop to calculate digits from 1 to n instead of digits around n-th)
