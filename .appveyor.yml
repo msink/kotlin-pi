@@ -21,7 +21,7 @@ test_script:
   - ps: 1..5 | % {(Measure-Command {build/konan/bin/mingw/pi-konan 1000}).TotalSeconds} | Measure-Object -Average
 
 before_deploy:
-  - pushd build && 7z a Pi-windows.zip pi-c.exe konan/bin/mingw/pi-interop.exe konan/bin/mingw/pi-konan.exe && popd
+  - pushd build && 7z a Pi-windows.zip pi-c.exe .\konan\bin\mingw\pi-interop.exe .\konan\bin\mingw\pi-konan.exe && popd
 
 artifacts:
   - path: build\Pi-windows.zip
