@@ -16,6 +16,8 @@ Computing 1000 decimal digits of π, average time on 20 runs:
 | Kotlin/Native 0.4 EAP        | 11.4 sec        |
 | Kotlin/Native 0.6 EAP        | 10.2 sec        |
 | Kotlin/Native 0.6.2 EAP      | 9.3 sec         |
+| Kotlin/Native after #1424    | 6.8 sec         |
 
-Result - pure Kotlin/Native (EAP) approx. 1.4 times slower in this test.
-If you really want maximum performance - write critical parts in C and call via interop.
+Result - currently pure math calculation in Kotlin/Native now is 1.4 times slower in this test.
+
+But this issue is already fixed in master branch, and hopefully in next version performance will be identical.
