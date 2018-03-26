@@ -10,9 +10,8 @@
 
 package pi
 
-import platform.posix.*
-///private fun log(n: Double) = Math.log(n)
-///private fun sqrt(n: Double) = Math.sqrt(n)
+import kotlin.math.ln
+import kotlin.math.sqrt
 
 private fun mul_mod(a: Int, b: Int, m: Int)
         = ((a.toLong() * b.toLong()) % m).toInt()
@@ -79,14 +78,14 @@ private fun next_prime(n: Int): Int {
 
 fun pi_nth_digit(n: Int): Int {
 
-    val N = ((n + 20) * log(10.0) / log(2.0)).toInt()
+    val N = ((n + 20) * ln(10.0) / ln(2.0)).toInt()
     var sum = 0.0
     var a = 3
     var t: Int
 
     while (a <= 2 * N) {
 
-        val vmax = (log((2 * N).toDouble()) / log(a.toDouble())).toInt()
+        val vmax = (ln((2 * N).toDouble()) / ln(a.toDouble())).toInt()
         var av = 1
         var i = 0
         while (i < vmax) {
