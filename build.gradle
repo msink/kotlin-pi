@@ -5,7 +5,7 @@ konanArtifacts {
         enableOptimizations true
     }
     interop('pi') {
-        includeDirs "${System.getProperty("user.dir")}/src/main/c"
+        includeDirs "${project.rootDir}/src/main/c"
     }
     program('pi-interop') {
         enableOptimizations true
